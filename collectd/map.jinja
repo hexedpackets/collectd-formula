@@ -129,6 +129,10 @@
                 'prefix': 'collectd',
                 'postfix': ''
             },
+            'write_tsdb': {
+                'host': salt['grains.get']('fqdn'),
+                'port': 4242,
+            },
             'python': {
                 'Globals': 'true'
             },
@@ -147,7 +151,7 @@
             'rrdtool': {
                 'datadir': '/var/lib/collectd/rrd',
                 'cacheflush': 120,
-                'writespersecond': 50 
+                'writespersecond': 50
             }
         }
     }
